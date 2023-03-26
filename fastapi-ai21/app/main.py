@@ -1,7 +1,7 @@
 from typing import Union
 
 from fastapi import FastAPI
-import _ai21
+import myai21
 
 app = FastAPI()
 
