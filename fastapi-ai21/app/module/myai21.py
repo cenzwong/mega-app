@@ -28,5 +28,7 @@ def ai21_rewrite(text, intent, key):
     }
 
     response = requests.post(url, json=payload, headers=headers)
+    response_json = response.json()
+    print(response.json())
 
-    print(response.text)
+    return response_json.get("suggestions")
