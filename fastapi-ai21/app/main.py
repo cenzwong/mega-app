@@ -8,6 +8,10 @@ from .module import myai21
 
 app = FastAPI()
 
-@app.get("/ai21/paraphrase/{text}")
-async def paraphrase(text:str, intent: str, key: str):
+@app.post("/ai21/paraphrase/")
+async def ai21_rewrite(text:str, intent: str, key: str):
     return myai21.ai21_rewrite(text, intent, key)
+
+@app.post("/ai21/complete/{model}")
+async def ai21_prompt(model:str, text: str, key: str):
+    return myai21.ai21_prompt(model, text, key)
